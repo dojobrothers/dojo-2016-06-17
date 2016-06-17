@@ -25,3 +25,22 @@ main = hspec $ do
         "    _  _  _  _  _  _     _ \n\
         \|_||_|| || ||_   |  |  ||_ \n\
         \  | _||_||_||_|  |  |  | _|\n"
+
+  describe "inputNumberOne" $ do
+    it "works for 1 only!" $
+      inputNumberOne
+        "   "
+        "  |"
+        "  |"
+
+        `shouldBe`
+        1
+
+  describe "inputNumberTwo" $ do
+    it "works for 2 only!" $
+      inputNumberTwo
+        " _ "
+        " _|"
+        "|_ "
+        `shouldBe`
+        2
