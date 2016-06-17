@@ -44,3 +44,12 @@ main = hspec $ do
         "|_ "
         `shouldBe`
         2
+
+  describe "inputNumberTwelve" $ do
+    it "works for 12 only!" $
+      inputNumberTwelve
+      ("   " ++ " _ ")
+      ("  |" ++ " _|")
+      ("  |" ++ "|_ ")
+        `shouldBe`
+        12

@@ -10,3 +10,5 @@ inputNumberOne t m b
 inputNumberTwo t m b
   | t==" _ " && m==" _|" && b=="|_ " = 2
   | otherwise = error "inputNumberTwo: cant handle this digit"
+
+inputNumberTwelve t m b = undefined
