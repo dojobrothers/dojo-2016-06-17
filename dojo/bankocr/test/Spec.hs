@@ -60,11 +60,20 @@ main = hspec $ do
         `shouldBe`
         21
 
-  describe "inputNumber" $ do
-    it "works for 12122" $
-      inputNumber
-        "    _     _     _ \n\
-        \  | _|\n\
-        \  ||_ \n"
-        `shouldBe`
-        12
+ describe "split digits " $ do
+   it "splits the motherfucker 12 into 1 and 2" $
+    splitDigits
+           "    _    _   \n\
+           \  | _| | _| |\n\
+           \  ||_  ||_  |\n"
+           `shouldBe`
+
+
+  -- describe "inputNumber" $ do
+  --   it "works for 12121" $
+  --     inputNumber
+  --       "    _    _   \n\
+  --       \  | _| | _| |\n\
+  --       \  ||_  ||_  |\n"
+  --       `shouldBe`
+  --       12121
