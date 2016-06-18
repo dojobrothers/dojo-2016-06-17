@@ -44,11 +44,27 @@ main = hspec $ do
         `shouldBe`
         2
 
-  describe "inputNumberTwelve" $ do
-    it "works for 12 only!" $
-      inputNumberTwelve
-      ("   " ++ " _ ")
-      ("  |" ++ " _|")
-      ("  |" ++ "|_ ")
+  describe "inputTwoDigits" $ do
+    it "works for 12" $
+      inputTwoDigits
+        "    _ \n\
+        \  | _|\n\
+        \  ||_ \n"
+        `shouldBe`
+        12
+    it "works for 21" $
+      inputTwoDigits
+        " _    \n\
+        \ _|  |\n\
+        \|_   |\n"
+        `shouldBe`
+        21
+
+  describe "inputNumber" $ do
+    it "works for 12122" $
+      inputNumber
+        "    _     _     _ \n\
+        \  | _|\n\
+        \  ||_ \n"
         `shouldBe`
         12
