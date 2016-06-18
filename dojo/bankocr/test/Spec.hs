@@ -26,9 +26,9 @@ main = hspec $ do
         \|_||_|| || ||_   |  |  ||_ \n\
         \  | _||_||_||_|  |  |  | _|\n"
 
-  describe "inputNumberOne" $ do
+  describe "inputDigit" $ do
     it "works for 1 only!" $
-      inputNumberOne
+      inputDigit
         "   "
         "  |"
         "  |"
@@ -36,9 +36,8 @@ main = hspec $ do
         `shouldBe`
         1
 
-  describe "inputNumberTwo" $ do
     it "works for 2 only!" $
-      inputNumberTwo
+      inputDigit
         " _ "
         " _|"
         "|_ "
@@ -48,15 +47,6 @@ main = hspec $ do
   describe "inputNumberTwelve" $ do
     it "works for 12 only!" $
       inputNumberTwelve
-      ("   " ++ " _ ")
-      ("  |" ++ " _|")
-      ("  |" ++ "|_ ")
-        `shouldBe`
-        12
-
-  describe "inputNumber" $ do
-    it "works for all N !" $
-      inputNumber
       ("   " ++ " _ ")
       ("  |" ++ " _|")
       ("  |" ++ "|_ ")
