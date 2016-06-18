@@ -22,3 +22,6 @@ inputNumber = undefined
 --inputDigit (drop 3 t) (drop 3 m) (drop 3 b)
 --where
 --  [t, m, b] = lines input
+
+splitDigits :: String -> [String]
+splitDigits = undefined
