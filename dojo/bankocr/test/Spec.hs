@@ -43,7 +43,6 @@ main = hspec $ do
         "|_ "
         `shouldBe`
         2
-
   describe "inputTwoDigits" $ do
     it "works for 12" $
       inputTwoDigits
@@ -84,3 +83,11 @@ main = hspec $ do
         \  ||_   ||_   |\n"
         `shouldBe`
         12121
+
+    it "works for 1234567890" $
+      inputNumber
+      "    _  _     _  _  _  _  _  _ \n\
+      \  | _| _||_||_ |_   ||_||_|| |\n\
+      \  ||_  _|  | _||_|  ||_| _||_|\n"
+      `shouldBe`
+      1234567890

@@ -3,8 +3,8 @@ module Input where
 import Data.List (transpose)
 
 someFunc :: IO ()
-someFunc = putStrLn "someFunc"
 
+someFunc = putStrLn "someFunc"
 inputDigit :: String -> String -> String -> Int
 inputDigit "   "
            "  |"
@@ -12,6 +12,27 @@ inputDigit "   "
 inputDigit " _ "
            " _|"
            "|_ " = 2
+inputDigit " _ "
+            " _|"
+            "|_ " = 2
+inputDigit" _ "
+          " _|"
+          " _|" = 3
+inputDigit "   "
+           "|_|"
+           "  |" = 4
+inputDigit " _ "
+           "|_"
+           " _| " = 5
+          inputDigit " _ "
+          " _|"
+          "|_ " = 2
+          inputDigit " _ "
+          " _|"
+          "|_ " = 2
+          inputDigit " _ "
+          " _|"
+          "|_ " = 2
 inputDigit _ _ _ = error "inputDigit: cant handle this digit"
 
 inputTwoDigits :: String -> Int
