@@ -1,13 +1,18 @@
 module Input where
 
+import Data.List (transpose)
+
 someFunc :: IO ()
 someFunc = putStrLn "someFunc"
 
 inputDigit :: String -> String -> String -> Int
-inputDigit t m b
-  | t=="   " && m=="  |" && b=="  |" = 1
-  | t==" _ " && m==" _|" && b=="|_ " = 2
-  | otherwise = error "inputDigit: cant handle this digit"
+inputDigit "   "
+           "  |"
+           "  |" = 1
+inputDigit " _ "
+           " _|"
+           "|_ " = 2
+inputDigit _ _ _ = error "inputDigit: cant handle this digit"
 
 inputTwoDigits :: String -> Int
 inputTwoDigits input =
@@ -17,11 +22,14 @@ inputTwoDigits input =
     [t, m, b] = lines input
 
 inputNumber :: String -> Int
-inputNumber = undefined
---inputNumber = inputDigit (take 3 t) (take 3 m) (take 3 b) * 10 +
---inputDigit (drop 3 t) (drop 3 m) (drop 3 b)
---where
---  [t, m, b] = lines input
+inputNumber = glue . reverse . map fromDigit . splitDigits
+  where
+    fromDigit [t, m, b] = inputDigit t m b
+    glue []     = 0
+    glue (x:xs) = x + 10 * glue xs
 
 splitDigits :: String -> [[String]]
-splitDigits input =  undefined
+splitDigits = transpose . map splitBy3 . lines
+  where
+    splitBy3 [] = []
+    splitBy3 xs = take 3 xs : splitBy3 (drop 3 xs)
