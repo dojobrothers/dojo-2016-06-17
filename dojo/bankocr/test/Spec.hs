@@ -67,13 +67,13 @@ main = hspec $ do
            \  | _|\n\
            \  ||_ \n"
            `shouldBe`
-           [
-           "   \n\
-           \  |\n\
-           \  |\n",
-           " _ \n\
-           \ _|\n\
-           \|_ \n"
+           [[
+           "   ",
+           "  |",
+           "  |"],
+          [" _ ",
+           " _|",
+           "|_ "]
            ]
 
   -- describe "inputNumber" $ do

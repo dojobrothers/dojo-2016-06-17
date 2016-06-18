@@ -23,5 +23,5 @@ inputNumber = undefined
 --where
 --  [t, m, b] = lines input
 
-splitDigits :: String -> [String]
-splitDigits = undefined
+splitDigits :: String -> [[String]]
+splitDigits input =  undefined
