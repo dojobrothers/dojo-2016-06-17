@@ -3,8 +3,8 @@ module Input where
 import Data.List (transpose)
 
 someFunc :: IO ()
-
 someFunc = putStrLn "someFunc"
+
 inputDigit :: String -> String -> String -> Int
 inputDigit "   "
            "  |"
@@ -48,6 +48,7 @@ inputTwoDigits input =
 inputNumber :: String -> Int
 inputNumber = glue . reverse . map fromDigit . splitDigits
   where
+    fromDigit :: [String] -> Int
     fromDigit [t, m, b] = inputDigit t m b
     glue []     = 0
     glue (x:xs) = x + 10 * glue xs

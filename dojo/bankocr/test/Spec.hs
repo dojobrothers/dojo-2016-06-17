@@ -35,7 +35,6 @@ main = hspec $ do
 
         `shouldBe`
         1
-
     it "works for 2 only!" $
       inputDigit
         " _ "
@@ -43,6 +42,7 @@ main = hspec $ do
         "|_ "
         `shouldBe`
         2
+
   describe "inputTwoDigits" $ do
     it "works for 12" $
       inputTwoDigits
@@ -93,8 +93,7 @@ main = hspec $ do
       1234567890
 
     it "works for empty input" $
-      inputNumber
-      "\n\n\n"
+      inputNumber "\n\n\n" `shouldBe` 0
 
     it "parses the output of outputNumber" $
       property $ \n -> n >= 0 ==> inputNumber (outputNumber n) == n
