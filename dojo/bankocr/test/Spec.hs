@@ -92,5 +92,9 @@ main = hspec $ do
       `shouldBe`
       1234567890
 
-    it "parses the output of outputNumber" $
+    it "works for empty input" $
       inputNumber
+      "\n\n\n"
+
+    it "parses the output of outputNumber" $
+      property $ \n -> n >= 0 ==> inputNumber (outputNumber n) == n
