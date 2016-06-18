@@ -53,3 +53,12 @@ main = hspec $ do
       ("  |" ++ "|_ ")
         `shouldBe`
         12
+
+  describe "inputNumber" $ do
+    it "works for all N !" $
+      inputNumber
+      ("   " ++ " _ ")
+      ("  |" ++ " _|")
+      ("  |" ++ "|_ ")
+        `shouldBe`
+        12
