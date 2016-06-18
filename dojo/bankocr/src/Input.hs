@@ -13,27 +13,30 @@ inputDigit " _ "
            " _|"
            "|_ " = 2
 inputDigit " _ "
-            " _|"
-            "|_ " = 2
-inputDigit" _ "
-          " _|"
-          " _|" = 3
+           " _|"
+           " _|" = 3
 inputDigit "   "
            "|_|"
            "  |" = 4
 inputDigit " _ "
-           "|_"
-           " _| " = 5
-          inputDigit " _ "
-          " _|"
-          "|_ " = 2
-          inputDigit " _ "
-          " _|"
-          "|_ " = 2
-          inputDigit " _ "
-          " _|"
-          "|_ " = 2
-inputDigit _ _ _ = error "inputDigit: cant handle this digit"
+           "|_ "
+           " _|" = 5
+inputDigit " _ "
+           "|_ "
+           "|_|" = 6
+inputDigit " _ "
+           "  |"
+           "  |" = 7
+inputDigit " _ "
+           "|_|"
+           "|_|" = 8
+inputDigit " _ "
+           "|_|"
+           " _|" = 9
+inputDigit " _ "
+           "| |"
+           "|_|" = 0
+inputDigit t m b = error $ "inputDigit: cant handle this digit " ++ show (t, m, b)
 
 inputTwoDigits :: String -> Int
 inputTwoDigits input =

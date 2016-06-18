@@ -91,3 +91,6 @@ main = hspec $ do
       \  ||_  _|  | _||_|  ||_| _||_|\n"
       `shouldBe`
       1234567890
+
+    it "parses the output of outputNumber" $
+      inputNumber
