@@ -50,8 +50,7 @@ inputNumber = glue . reverse . map fromDigit . splitDigits
   where
     fromDigit :: [String] -> Int
     fromDigit [t, m, b] = inputDigit t m b
-    glue []     = 0
-    glue (x:xs) = x + 10 * glue xs
+    glue = foldr (\x r -> x + 10 * r) 0
 
 splitDigits :: String -> [[String]]
 splitDigits = transpose . map splitBy3 . lines
